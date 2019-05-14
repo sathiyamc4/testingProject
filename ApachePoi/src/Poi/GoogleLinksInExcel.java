@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.util.List;
 
 import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -24,7 +25,7 @@ public class GoogleLinksInExcel
 		driver.get("https://www.google.co.in/?gws_rd=ssl");
 		FileOutputStream fout = new FileOutputStream("C:\\Users\\SATHIYA\\Desktop\\sample.xlsx");
 		XSSFWorkbook wb = new XSSFWorkbook();
-		Sheet sheet = wb.createSheet("Sheet2");
+		XSSFSheet sheet = wb.createSheet("Sheet2");
 		List<WebElement> lists = driver.findElements(By.tagName("a"));
 		System.out.println("No. of links:   "+lists.size());
 		for(WebElement list: lists)
